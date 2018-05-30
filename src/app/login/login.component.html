@@ -1,0 +1,15 @@
+<h1>Customer Login</h1>
+<hr align="left" width="370">
+<div class="form-group">
+<form #loginForm="ngForm" (ngSubmit)="Authenticate()">
+<table>
+<tr><td>Username: </td><td><input type="text" [(ngModel)]="login.username" class="form-control" name="username" placeholder="enter username" required></td></tr>
+<tr><td>Password: </td><td><input type="password" [(ngModel)]="login.password" class="form-control" name="password" placeholder="enter password" required></td></tr><td>
+</table>
+<span class="error"><b></b></span><br>
+<input type="submit" [disabled]="loginForm.invalid" class="btn btn-primary move" value="Log in" name="submit"><br>
+<a href="/register"><input type="button" class="btn btn-info move1" value="New users must register here"></a><br>
+<div *ngIf="loginForm.invalid"><span class="error">All fields are required<b></b></span></div>
+<span *ngIf="error" class="error"><b>{{error}}</b></span><br>
+</form>
+</div>

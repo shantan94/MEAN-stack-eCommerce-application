@@ -1,0 +1,35 @@
+.set{
+  float:left;
+}
+.extend{
+  width:1140px;
+}
+body{
+  width:100%;
+}
+#getval{
+  display:none;
+}
+.headings{
+  margin-top:20px
+}
+.right{
+  margin-top:20px;
+  margin-right:150px;
+  margin-left:-400px;
+}
+.center{
+  margin-right:120px;
+  margin-left:-700px;
+  margin-top:20px;
+}
+.left{
+  margin-left:150px;
+  margin-top:20px;
+}
+.hide{
+  display:none;
+}
+.msg{
+  color:red;
+}

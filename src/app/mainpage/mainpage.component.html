@@ -1,0 +1,23 @@
+<div class="set">
+  <h1>Items List</h1>
+  </div>
+  <div class="headings" align="right">
+  <form method="post" action="">
+  <span><b>Welcome: {{username}}</b></span>
+  <input type="submit" name="submit" (click)="LogOut()" value="Log Out" class="btn btn-primary">
+  <button name="shopping" class="btn btn-primary" id="shopping"><span>Shopping Basket.(<span class="badge">{{count}}</span>)</span></button>
+  </form>
+  </div>
+  <hr align="left" width="1140">
+  <div class="form-group">
+  <form method="get" action="">
+  <table>
+  <tr><td colspan="2"><textarea name="search" id="search" class="form-control extend" placeholder="search an item" rows="5" cols="40"></textarea></td></tr>
+  <tr>
+  <td><input type="submit" class="btn btn-primary left" value="SearchByAuthor" name="author" id="author"></td>
+  <td><input type="submit" class="btn btn-primary center" value="SearchByBookTitle" name="booktitle" id="booktitle"></td>
+  <td><input type="submit" class="btn btn-primary right" value="PreviousSearch" name="prevsearch" id="booktitle"></td>
+  </table>
+  </form>
+</div>
+<!-- <span class="msg"><b><?php if(isset($msg1)) echo $msg1;  ?></b></span> -->

@@ -1,0 +1,17 @@
+<h1>Registration</h1>
+  <hr align="left" width="350">
+  <div class="form-group">
+  <form #userForm="ngForm" (ngSubmit)="Register()">
+  <table>
+  <tr><td>Username:</td><td><input type="text" class="form-control" [(ngModel)]="user.username" placeholder="Enter Username" name="username" id="username" required></td></tr>
+  <tr><td>Password:</td><td><input type="password" class="form-control" [(ngModel)]="user.password" placeholder="Enter Password" name="password" id="password" required></td></tr>
+  <tr><td>Email:</td><td><input type="text" name="email" class="form-control" [(ngModel)]="user.email" placeholder="Enter Email" id="email" required></td></tr>
+  <tr><td>Phone:</td><td><input type="text" name="phone" class="form-control" [(ngModel)]="user.phone" placeholder="Enter Phone" required></td></tr>
+  <tr><td>Address:</td><td><input type="text" placeholder="Enter Address" name="address" [(ngModel)]="user.address" class="form-control" required></td></tr>
+  </table>
+  <div *ngIf="userForm.invalid"><span class="error">All fields are required<b></b></span></div>
+  <span *ngIf="error" class="error"><b>{{error}}</b></span><br>
+  <tr><td><input type="submit" name="register" [disabled]="userForm.invalid" class="btn btn-primary move" id="register" value="Register"></td></tr>
+  </form>
+  </div>
+<a href="/login"><input type="button" name="back" class="btn btn-info" id="back" value="Go Back to  Login"></a>
