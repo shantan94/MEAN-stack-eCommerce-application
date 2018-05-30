@@ -1,0 +1,15 @@
+<h1>Item Upload</h1>
+  <hr align="left" width="350">
+  <div class="form-group">
+  <form #userForm="ngForm" (ngSubmit)="UploadItem()">
+  <table>
+  <tr><td>Itemname:</td><td><input type="text" class="form-control" [(ngModel)]="item.itemname" placeholder="Enter Itemname" name="itemname" id="itemname" required></td></tr>
+  <tr><td>Description:</td><td><textarea type="password" [(ngModel)]="item.description" placeholder="Enter Description" name="description" id="description" required></textarea></td></tr>
+  <tr><td>File:</td><td><input type="file" (change)="onChange($event)" accept="image/*" name="email" required></td></tr>
+  <tr><td>Price:</td><td><input type="text" placeholder="Enter Price" name="address" [(ngModel)]="item.price" class="form-control" required></td></tr>
+  </table>
+ <div *ngIf="userForm.invalid"><span class="error">All fields are required<b></b></span></div>
+  <tr><td><input type="submit" name="register" [disabled]="userForm.invalid" class="btn btn-primary move" id="register" value="Upload Item"></td></tr>
+  </form>
+  <span *ngIf="error" class="error"><b>{{error}}</b></span><br>
+ </div>

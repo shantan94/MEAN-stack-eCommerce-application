@@ -9,15 +9,28 @@
   </form>
   </div>
   <hr align="left" width="1140">
-  <div class="form-group">
+  <div class="form-group center">
   <form method="get" action="">
   <table>
   <tr><td colspan="2"><textarea name="search" id="search" class="form-control extend" placeholder="search an item" rows="5" cols="40"></textarea></td></tr>
   <tr>
-  <td><input type="submit" class="btn btn-primary left" value="SearchByAuthor" name="author" id="author"></td>
-  <td><input type="submit" class="btn btn-primary center" value="SearchByBookTitle" name="booktitle" id="booktitle"></td>
-  <td><input type="submit" class="btn btn-primary right" value="PreviousSearch" name="prevsearch" id="booktitle"></td>
   </table>
   </form>
+  <a href="/upload"><button type="submit" class="btn btn-primary center" name="booktitle" id="booktitle">
+    <span class="glyphicon glyphicon-plus"></span>&nbsp;Upload Item
+  </button></a>
+  <div style="margin-top: 20px;" *ngIf="(itemdata === undefined || itemdata.length === 0) else itemWithData">
+    No items to display please upload some items to start up.
+  </div>
+  <ng-template #itemWithData>
+    <table style="margin-top: 20px;" class="table table-bordered">
+      <tr><td>Itemname</td><td>Description</td><td>Price</td><td>Image</td><td>Delete</td></tr>
+      <tr *ngFor="let value of itemdata">
+        <td>{{value.itemname}}</td><td>{{value.description}}</td><td>{{value.price}}</td><td>
+          <img [src]="value.image" height="100" width="100"/>
+        </td>
+        <td><button class="btn btn-danger">Delete</button></td>
+      </tr>
+    </table>
+  </ng-template>
 </div>
-<!-- <span class="msg"><b><?php if(isset($msg1)) echo $msg1;  ?></b></span> -->

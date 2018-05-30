@@ -1,39 +1,45 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { BrowserModule } from "@angular/platform-browser";
+import { NgModule } from "@angular/core";
+import { FormsModule } from "@angular/forms";
 
-import { AppComponent } from './app.component';
-import { LoginComponent } from './login/login.component';
-import { RouterModule, Routes } from '@angular/router';
-import { RegisterComponent } from './register/register.component';
-import { CommonService } from './services/common.service';
-import { HttpModule } from '@angular/http';
-import { MainpageComponent } from './mainpage/mainpage.component';
-import { AuthGuardService } from './auth/authguard';
-import { AuthGuardLoginService } from './auth/authguardlogin';
+import { AppComponent } from "./app.component";
+import { LoginComponent } from "./login/login.component";
+import { RouterModule, Routes } from "@angular/router";
+import { RegisterComponent } from "./register/register.component";
+import { CommonService } from "./services/common.service";
+import { HttpModule } from "@angular/http";
+import { MainpageComponent } from "./mainpage/mainpage.component";
+import { AuthGuardService } from "./auth/authguard";
+import { AuthGuardLoginService } from "./auth/authguardlogin";
+import { ItemuploadComponent } from "./itemupload/itemupload.component";
 
-const appRoutes:Routes=[
-	{
-		path:'login',
-		component:LoginComponent,
-		canActivate:[AuthGuardLoginService]
-	},
-	{
-		path:'register',
-		component:RegisterComponent,
-		canActivate:[AuthGuardLoginService]
-	},
-	{
-		path:'main',
-		component:MainpageComponent,
-		canActivate:[AuthGuardService]
-	},
-	{
-		path:'',
-		redirectTo:'/login',
-		pathMatch:'full',
-		canActivate:[AuthGuardLoginService]
-	}
+const appRoutes: Routes = [
+  {
+    path: "login",
+    component: LoginComponent,
+    canActivate: [AuthGuardLoginService]
+  },
+  {
+    path: "register",
+    component: RegisterComponent,
+    canActivate: [AuthGuardLoginService]
+  },
+  {
+    path: "main",
+    component: MainpageComponent,
+    canActivate: [AuthGuardService]
+  },
+  {
+    path: "upload",
+    component: ItemuploadComponent,
+    canActivate: [AuthGuardService]
+  },
+  {
+    path: "",
+    redirectTo: "/login",
+    pathMatch: "full",
+    canActivate: [AuthGuardLoginService]
+  }
 ];
 
 @NgModule({
@@ -41,7 +47,8 @@ const appRoutes:Routes=[
     AppComponent,
     LoginComponent,
     RegisterComponent,
-    MainpageComponent
+    MainpageComponent,
+    ItemuploadComponent
   ],
   imports: [
     BrowserModule,
@@ -52,4 +59,4 @@ const appRoutes:Routes=[
   providers: [CommonService, AuthGuardService, AuthGuardLoginService],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}

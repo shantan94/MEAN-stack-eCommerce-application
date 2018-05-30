@@ -1,35 +1,30 @@
-.set{
-  float:left;
+.set {
+  float: left;
 }
-.extend{
-  width:1140px;
+.extend {
+  width: 1140px;
 }
-body{
-  width:100%;
+body {
+  width: 100%;
 }
-#getval{
-  display:none;
+#getval {
+  display: none;
 }
-.headings{
-  margin-top:20px
+.headings {
+  margin-top: 20px;
 }
-.right{
-  margin-top:20px;
-  margin-right:150px;
-  margin-left:-400px;
+.center {
+  margin-top: 20px;
 }
-.center{
-  margin-right:120px;
-  margin-left:-700px;
-  margin-top:20px;
+.hide {
+  display: none;
 }
-.left{
-  margin-left:150px;
-  margin-top:20px;
+.msg {
+  color: red;
 }
-.hide{
-  display:none;
+textarea {
+  resize: none;
 }
-.msg{
-  color:red;
+td {
+  text-align: center;
 }
